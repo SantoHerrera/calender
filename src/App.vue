@@ -17,7 +17,7 @@ export default {
   name: "App",
   data: function() {
     return {
-      calender: this.createNestedArray(7, 3),
+      calender: this.createNestedArray(7, 4),
       dayIndex: 4
     };
   },
@@ -58,7 +58,7 @@ export default {
       // console.log(day);
 
       // create a loop between the interval
-      while (dates.length < 14) {
+      while (dates.length < 21) {
         days.push(currentDate.getDate());
         // add one day
         dates.push(currentDate);
@@ -81,6 +81,7 @@ export default {
       // console.log(typeof y )
 
       let next2WeeksDate = this.returnNext2Weeks();
+      console.log(next2WeeksDate)
 
       console.log(typeof y, y)
       // this.calender[x][startHere].screen = "p.easefs"
@@ -92,7 +93,6 @@ export default {
         if (!this.calender[x][y]) {
           x++;
           y = 0;
-          continue;
         }
         this.calender[x][y].screen = `${next2WeeksDate[i]}`;
         y++;
